@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>3 - PovoarLista</title>
+</head>
+<body>
+	<ul id="nomes">
+		
+	</ul>
+	<script>
+		(function(){
+			var nomes = ["Bruna", "Isabella", "Emanuele"]
+			var lista = document.getElementById('nomes')	
+
+			for(x in nomes){
+				var criaItem = document.createElement("li")
+				var conteudo = document.createTextNode(nomes[x])
+				criaItem.appendChild(conteudo)
+				lista.appendChild(criaItem)
+			}
+		})()
+	</script>
+</body>
+</html>
