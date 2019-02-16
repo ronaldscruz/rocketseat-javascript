@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>1 - CriarQuadrado</title>
+</head>
+<body>
+	<div id="app">
+		<button id="criar">Criar quadrado</button>
+		<div class="box"></div>
+	</div>
+	<script>
+		document.getElementById('criar').onclick = function(){
+			var quadrado = document.createElement("div")
+			quadrado.style.width = "100px"
+			quadrado.style.height = "100px"
+			quadrado.style.backgroundColor = "#FF0000"
+
+			var alvo = document.getElementById('app')
+			alvo.appendChild(quadrado)
+		}
+	</script>
+</body>
+</html>

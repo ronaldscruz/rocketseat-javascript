@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>2 - MudarCor</title>
+</head>
+<body>
+	<div id="app">
+		<button id="criar">Criar quadrado</button>
+		<div class="box"></div>
+	</div>
+	<script>
+
+		document.getElementById('criar').onclick = function(){
+			var quadrado = document.createElement("div")
+			quadrado.style.width = "100px"
+			quadrado.style.height = "100px"
+			quadrado.style.backgroundColor = "#FF0000"
+			quadrado.onmouseover = function(){
+				quadrado.style.backgroundColor = getRandomColor()
+			}
+
+			var alvo = document.getElementById('app')
+			alvo.appendChild(quadrado)
+		}
+
+		function getRandomColor() {  
+			var letters = "0123456789ABCDEF";
+			var color = "#";  
+			for (var i = 0; i < 6; i++) {
+			    color += letters[Math.floor(Math.random() * 16)];  
+			}  
+			return color;
+		}
+
+		// document.getElementById('criar').onclick = function(){
+		// 	var quadrado = document.createElement("div")
+		// 	quadrado.setAttribute("onmouseover","mudaCor(event)")
+		// 	quadrado.style.width = "100px"
+		// 	quadrado.style.height = "100px"
+		// 	quadrado.style.backgroundColor = "#FF0000"
+
+		// 	var alvo = document.getElementById('app')
+		// 	alvo.appendChild(quadrado)
+		// }
+
+		// function mudaCor(event){
+		// 	event.target.style.backgroundColor = getRandomColor()
+		// }
+
+		// function getRandomColor() {  
+		// 	var letters = "0123456789ABCDEF";
+		// 	var color = "#";  
+		// 	for (var i = 0; i < 6; i++) {
+		// 	    color += letters[Math.floor(Math.random() * 16)];  
+		// 	}  
+		// 	return color;
+		// }
+	</script>
+</body>
+</html>
