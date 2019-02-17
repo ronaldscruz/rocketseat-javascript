@@ -31,6 +31,9 @@
 		}
 
 		function renderRepos(userRepos = []){
+			var inpUser = document.getElementById('user')
+			var txtUser = inpUser.value
+
 			lstRepos.innerHTML = ""
 
 			for(nmRepo of userRepos){
@@ -38,7 +41,7 @@
 				// var repo = document.createTextNode(nmRepo.name)
 				// liRepo.appendChild(repo)
 				// lstRepos.appendChild(liRepo)
-				lstRepos.innerHTML += "<li>"+nmRepo.name+"</li>"
+				lstRepos.innerHTML += "<li><a href='https://github.com/"+txtUser+"/"+nmRepo.name+"' target='__blank'>"+nmRepo.name+"</a></li>"
 			}
 		}
 
