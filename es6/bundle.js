@@ -1,25 +1,30 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Teste =
-/*#__PURE__*/
-function () {
-  function Teste() {
-    _classCallCheck(this, Teste);
+// rest
+var multiplicar = function multiplicar() {
+  for (var _len = arguments.length, nums = new Array(_len), _key = 0; _key < _len; _key++) {
+    nums[_key] = arguments[_key];
   }
 
-  _createClass(Teste, [{
-    key: "metodo",
-    value: function metodo() {}
-  }, {
-    key: "metodo2",
-    value: function metodo2() {}
-  }]);
+  return nums.reduce(function (total, proximo) {
+    return total * proximo;
+  });
+}; // console.log(multiplicar(4, 5, 5, 1, 2))
+// spread
 
-  return Teste;
-}();
+
+var carro = {
+  modelo: 'Jetta',
+  marca: 'Volkswagen',
+  ano: 2015
+};
+
+var carro2 = _objectSpread({}, carro, {
+  modelo: "Voyage"
+});
+
+console.log(carro, carro2);
