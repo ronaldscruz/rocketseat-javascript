@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Ex03</title>
+</head>
+<body>
+	<div id="app">
+		<input id="user"> <button id="buscar">Pesquisar repositórios</button>
+		<ul id="repos"></ul>
+	</div>
+
+	<script src="axios.js"></script>
+	<script>
+		var lstRepos = document.getElementById('repos')
+
+		document.getElementById('buscar').onclick = function(){
+			var inpUser = document.getElementById('user')
+			var txtUser = inpUser.value
+
+			lstRepos.innerHTML = "<li>Carregando...</li>"
+
+			axios.get("https://api.github.com/users/"+txtUser+"/repos")
+			.then(function(response){
+				renderRepos(response.data)
+			})
+			.catch(function(error){
+				console.warn("Falha na requisição. "+error)
+				renderError()
+			})
+		}
+
+		function renderRepos(userRepos = []){
+			lstRepos.innerHTML = ""
+
+			for(nmRepo of userRepos){
+				// var liRepo = document.createElement("li")
+				// var repo = document.createTextNode(nmRepo.name)
+				// liRepo.appendChild(repo)
+				// lstRepos.appendChild(liRepo)
+				lstRepos.innerHTML += "<li>"+nmRepo.name+"</li>"
+			}
+		}
+
+		function renderError(){
+			lstRepos.innerHTML = ""
+			lstRepos.innerHTML = "<li style='color: red'><u>Falha ao buscar usuário</u></li>"
+		}
+	</script>
+</body>
+</html>
