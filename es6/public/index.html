@@ -8,24 +8,21 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <form id="repo-form">
-        <input type="text" id="repository">
-        <button type="submit">Adicionar</button>
-    </form>
-    <ul id="repo-list">
-        <li>
-            <img src="https://avatars2.githubusercontent.com/u/36777554?v=4">
-            <strong>rocketseat-javascript</strong>
-            <p>Desafios de Javascript da Rocketseat </p>
-            <a href="http://github.com/ronaldscruz/rocketseat-javascript" target="_blank">Acessar</a>
-        </li>
-        <li>
-            <img src="https://avatars2.githubusercontent.com/u/69631?s=200&v=4">
-            <strong>facebook-android-sdk</strong>
-            <p>Used to integrate Android apps with Facebook Platform.</p>
-            <a href="https://github.com/facebook/facebook-android-sdk" target="_blank">Acessar</a>
-        </li>
-    </ul>
+    <div id="content">
+        <form id="repo-form">
+            <p id="errorspace"></p>
+            <input type="text" id="repository" placeholder="usuario/nomedorepositorio" size="27">
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul id="repo-list">
+            <li>
+                <img src="https://avatars2.githubusercontent.com/u/36777554?v=4">
+                <strong>rocketseat-javascript</strong>
+                <p>Desafios de Javascript da Rocketseat </p>
+                <a href="http://github.com/ronaldscruz/rocketseat-javascript" target="_blank">Acessar</a>
+            </li>
+        </ul>
+    </div>
     <script src="./bundle.js"></script>
 </body>
 </html>

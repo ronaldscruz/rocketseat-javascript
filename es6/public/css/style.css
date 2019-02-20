@@ -1,12 +1,65 @@
+body{
+   font-family: sans-serif;
+   background: url('../img/bg.jpg');
+   background-size: cover;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   display: grid;
+   grid-template-columns: 1fr 2fr 1fr;
+   grid-template-rows: 1fr;
+   grid-template-areas: 
+      ". content ."
+   ;
+}
+input{
+   margin-top: 8px;
+   border: 1.5px solid white;
+   padding: 6.5px 8.3px;
+   transition: all 0.25s ease;
+}
+
+input[type=text]:focus{
+   border: 1.5px solid #551A8B;
+}
+
+span{
+   color: white;
+}
+
+button{
+   cursor:pointer;
+   border:none;
+   border-radius: 0;
+   padding: 8px 12px;
+   color: white;
+   font-weight: 600;
+   background-color: #44A0AD;
+   transition: all 0.15s ease;
+}
+
+button:hover{
+   background-color: rgb(48, 118, 128);
+}
+
+#content{
+   grid-area: content;
+   padding: 10px 16px 27px 16px;
+   margin-top: 10px;
+   border-radius: 7px;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
 ul#repo-list{
    list-style: none;
    margin: 0; padding: 0;
-   font-family: sans-serif;
 }
 
 li{
    clear: both;
    margin-top: 20px;
+   padding: 15px 10px;
+   border-radius: 5px;
+   background-color: #eee;
 }
 
 img{
@@ -21,4 +74,17 @@ strong{
 
 p{
    margin: 5px 0;
+}
+
+p#errorspace{
+   color: white;
+}
+
+@media only screen and (max-width: 1024px){
+   body{
+      background: none; background-color: rgb(113, 75, 182);
+      grid-template-columns: 0fr 1fr 0fr;
+      grid-template-rows: 1fr;
+   }
+   
 }
